@@ -1,0 +1,70 @@
+<head>
+  <title>Food Chart</title>
+</head>
+
+<body>
+  <h1>I am Food Chart.</h1>
+
+  <table class="table">
+    <tr>
+      <th>
+        Name
+      </th>
+
+      <th>
+        Balance
+      </th>
+
+      <th></th>
+    </tr>
+
+    {{> people}}
+
+
+  </table>
+
+  {{> form}}
+
+  <div class="footer">
+    <h6>Source: <a href="https://github.com/kasima/foodchart-meteor" target=_new>https://github.com/kasima/foodchart-meteor</a></h6>
+  </div>
+</body>
+
+<template name="people">
+  {{#each people}}
+    {{> person}}
+  {{/each}}
+  <tr>
+    <td colspan="3"><h4 class="text-error" id="chart-status" {{{chartStatusStyle}}}>Food chart is not happy.</h4></td>
+  </tr>
+</template>
+
+<template name="person">
+  <tr>
+    <td>{{name}}</td>
+    <td>{{balance}}</td>
+    <td>
+      <a class="btn increment"><i class="icon-plus"></i></a>
+      <a class="btn decrement"><i class="icon-minus"></i></a>
+      <a class="btn btn-danger btn-delete" {{{deleteButtonStyle}}}><i class="icon-remove icon-white"></i></a>
+    </td>
+  <tr>
+</template>
+
+<template name="form">
+  <form class="form-inline">
+    <div class="control-group" id="person-form-group">
+      <div class="controls">
+        <input type="text" class="input-small" id="person-name-input" name="name" placeholder="Name" data-bind="person.name" />
+        <span class="help-inline" id="person-name-error"></span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-submit">Add Person</button>
+  </form>
+</template>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+  <input type="button" value="Click" />
+</template>

@@ -1,0 +1,29 @@
+/* CSS declarations go here */
+body {
+  width: 600px;
+  margin: auto;
+}
+
+.table {
+  /*width: 400px;*/
+}
+
+.table th, .table td {
+  width: 190px;
+}
+
+.btn-delete {
+  margin-left: 35px;
+}
+
+.input-small {
+  width: 180px;
+}
+
+.footer {
+  text-align: center;
+}
+/*
+#chart-status {
+  display: none;
+}*/
