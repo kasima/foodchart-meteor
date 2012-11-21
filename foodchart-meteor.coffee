@@ -30,7 +30,7 @@ if Meteor.isClient
     'click .decrement': (event) ->
       People.update(this._id, {$set: {balance: this.balance - 1}})
 
-    'click .delete': (event) ->
+    'click .btn-delete': (event) ->
       People.remove(this._id)
 
   createPerson = (template) ->
